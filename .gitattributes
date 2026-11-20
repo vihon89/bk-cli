@@ -1,0 +1,2 @@
+* text=auto eol=lf
+client/** -text whitespace=cr-at-eol

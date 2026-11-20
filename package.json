@@ -1,0 +1,22 @@
+{
+  "name": "@bk-baokuan/cli",
+  "version": "0.8.17",
+  "description": "在终端和 AI Agent 中使用 BK爆款创作工具",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=20" },
+  "bin": { "mubai-media": "bin/mubai-media.mjs" },
+  "files": [
+    "bin/mubai-media.mjs",
+    "client/bootstrap.mjs",
+    "dist/runtime/manifest.json",
+    "dist/runtime/runtime.zip"
+  ],
+  "scripts": {
+    "build:release": "python scripts/build-runtime.py",
+    "prepack": "npm run build:release",
+    "test": "npm --prefix client test",
+    "smoke:package": "node --test tests/packed-install.test.mjs"
+  },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" }
+}
