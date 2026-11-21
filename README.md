@@ -1,4 +1,4 @@
-# BK 爆款 CLI
+# <img src="./assets/bk-icon.png" alt="" width="50" height="50" align="absmiddle"> BK 爆款 CLI
 
 在终端或 AI Agent 中用 BK 账号制作商品图、商品视频和整期口播视频。客户端通过网页授权连接 BK，生成任务使用网站积分。
 
