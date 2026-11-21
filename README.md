@@ -6,10 +6,17 @@
 
 需要 Node.js 20+ 和 npm。Windows 请使用 PowerShell。macOS 和 Linux 可直接使用终端。Linux 网页授权需要可用的 Secret Service 和 `secret-tool`。
 
-### 安装、授权和检查
+官网提供[一句话安装入口](https://aibaokuan.top/home/#/ai-tool/install)。把下面这句话发给当前 AI 客户端即可：
+
+> 请按 https://aibaokuan.top/install.md 为当前客户端安装 BK CLI。
+
+### 从源码安装、授权和检查
+
+在克隆的仓库根目录执行以下命令。构建源码包还需要 Python 3.9+。
 
 ```sh
-npm install --global @bk-baokuan/cli@0.8.17
+npm pack
+npm install --global ./bk-baokuan-cli-0.8.17.tgz
 mubai-media --version
 mubai-media install --client generic --base-url https://aibaokuan.top
 mubai-media login --client generic --base-url https://aibaokuan.top --wait
@@ -56,6 +63,6 @@ npm pack --ignore-scripts
 npm run smoke:package
 ```
 
-构建发行包需要 Python 3.9+。运行时 ZIP 和清单生成在 `dist/runtime/`。npm 包包含入口、发行包和校验代码，运行时依赖由安装器按锁文件安装。验收从本地 npm 包启动，使用隔离用户目录和模拟服务。手动试用构建产物时，用 `npm install --global ./bk-baokuan-cli-0.8.17.tgz` 替换快速入门里的第一条命令。
+构建发行包需要 Python 3.9+。运行时 ZIP 和清单生成在 `dist/runtime/`。npm 包包含入口、发行包和校验代码，运行时依赖由安装器按锁文件安装。验收从本地 npm 包启动，使用隔离用户目录和模拟服务。
 
 本仓库采用 [Apache-2.0](LICENSE)。第三方依赖适用各自的许可条款。
